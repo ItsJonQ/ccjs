@@ -24,7 +24,7 @@ type CodeEditorProps = {
 }
 
 const StyledEditor = styled(CodeMirror, {
-  height: '100%',
+  minHeight: '100%',
   '& .CodeMirror': {
     height: '100%',
   },
