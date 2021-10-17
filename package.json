@@ -13,6 +13,7 @@
     "@radix-ui/react-tooltip": "0.1.1",
     "@stitches/react": "1.2.5",
     "codemirror": "5.63.3",
+    "copy-to-clipboard": "3.3.1",
     "next": "11.1.2",
     "prettier": "2.4.1",
     "react": "17.0.2",

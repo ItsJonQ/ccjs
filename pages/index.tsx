@@ -6,6 +6,7 @@ import { CodeEditor } from '../components/CodeEditor'
 import { Tooltip } from '../components/Tooltip'
 import { formatWithPrettier, formatWithJSComments } from '../utils/format'
 import { useOnKeyboardSave } from '../utils/useKeyboard'
+import { useClipboard } from '../utils/useClipboard'
 
 const Page = styled('div', {
   color: '$text',
@@ -64,6 +65,8 @@ export default function Home() {
   const [comments, setComments] = React.useState(initialComments)
   const contentRef = React.useRef(content)
 
+  const { hasCopied, onCopy } = useClipboard(comments)
+
   const updateContent = (next) => {
     contentRef.current = next
     setContent(next)
@@ -97,7 +100,9 @@ export default function Home() {
       </LeftPane>
       <RightPane>
         <ActionWrapper>
-          <Button primary>Copy</Button>
+          <Button primary onClick={onCopy}>
+            {hasCopied ? 'Copied' : 'Copy'}
+          </Button>
         </ActionWrapper>
         <CodeEditor value={comments} onChange={setComments} />
       </RightPane>

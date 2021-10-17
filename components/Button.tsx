@@ -9,7 +9,7 @@ export const Button = styled('button', {
   fontWeight: 'bold',
   padding: '$1 $2',
   borderRadius: 6,
-  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  boxShadow: '0 1px 2px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.2)',
   cursor: 'pointer',
   '&:hover': {
     backgroundColor: '#434E68',
