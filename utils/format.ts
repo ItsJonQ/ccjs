@@ -16,12 +16,13 @@ export function formatWithPrettier(value: string): string {
 
 export function formatWithJSComments(value: string): string {
   const rows = value.trim().split('\n')
-  const result = ['/**']
+  const result = ['/**', ' * @example', ' *', ' * ```jsx']
 
   rows.forEach((row) => {
     result.push(` * ${row}`)
   })
 
+  result.push(' * ```')
   result.push(' */')
 
   return result.join('\n').trim()
