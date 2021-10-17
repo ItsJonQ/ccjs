@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function useOnKeyboardSave(fn) {
+export function useOnKeyboardSave(fn: () => void) {
   React.useEffect(() => {
     const handleOnKeyDown = (event) => {
       if (event.key === 's' && (event.ctrlKey || event.metaKey)) {

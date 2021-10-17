@@ -1,10 +1,13 @@
 import { Controlled as CodeMirror } from 'react-codemirror2'
+import { styled } from '../stitches.config'
 
 if (typeof navigator !== 'undefined') {
   require('codemirror/mode/javascript/javascript')
   require('codemirror/mode/jsx/jsx')
   require('codemirror/mode/htmlmixed/htmlmixed')
   require('codemirror/mode/diff/diff')
+  require('codemirror/addon/comment/comment')
+  require('codemirror/addon/comment/continuecomment')
   require('codemirror/addon/edit/closebrackets')
   require('codemirror/addon/edit/matchbrackets')
   require('codemirror/addon/edit/matchtags')
@@ -15,9 +18,21 @@ if (typeof navigator !== 'undefined') {
   require('codemirror/addon/display/autorefresh')
 }
 
-export function CodeEditor({ value, onChange }) {
+type CodeEditorProps = {
+  value: string
+  onChange?: (value: string) => void
+}
+
+const StyledEditor = styled(CodeMirror, {
+  height: '100%',
+  '& .CodeMirror': {
+    height: '100%',
+  },
+})
+
+export function CodeEditor({ value, onChange }: CodeEditorProps) {
   return (
-    <CodeMirror
+    <StyledEditor
       options={{
         mode: 'jsx',
         theme: 'ayu-mirage',

@@ -8,11 +8,14 @@ export const {
   globalCss,
   styled,
   theme,
+  keyframes,
 } = createStitches({
   theme: {
     colors: {
-      hiContrast: 'hsl(206,10%,5%)',
-      loContrast: 'white',
+      background: '#1f2430',
+      backgroundLight: '#2B3243',
+      backgroundLighter: '#3D475E',
+      text: '#fff',
 
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
@@ -55,27 +58,5 @@ export const {
     fonts: {
       system: 'system-ui',
     },
-  },
-  utils: {
-    marginX: (value) => ({
-      marginLeft: value,
-      marginRight: value,
-    }),
-    marginY: (value) => ({
-      marginTop: value,
-      marginBottom: value,
-    }),
-    paddingX: (value) => ({
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    paddingY: (value) => ({
-      paddingTop: value,
-      paddingBottom: value,
-    }),
-  },
-  media: {
-    bp1: '(min-width: 520px)',
-    bp2: '(min-width: 900px)',
   },
 })
